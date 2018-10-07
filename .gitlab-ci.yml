@@ -14,8 +14,8 @@ build_job:
       - 'bin/Release/netcoreapp2.1/publish'
   script:
     - 'dotnet restore'
-    - 'dotnet build '
-    - 'dotnet publish'
+    - 'dotnet build -c Release'
+    - 'dotnet publish -c Release'
 
 # test_job:
 #   stage: test
