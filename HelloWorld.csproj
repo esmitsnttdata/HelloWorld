@@ -6,8 +6,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
-     <None Include="manifest.yml" CopyToOutputDirectory="Always" />
-     <None Include="devops-manifest.yml" CopyToOutputDirectory="Always" />
+     <None Include="*manifest.yml" CopyToOutputDirectory="Always" />
   </ItemGroup>
 
   <ItemGroup>
