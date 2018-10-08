@@ -6,4 +6,3 @@ applications:
   memory: 128M
   host: helloworlddotnet
   stack: cflinuxfs2
-  path: bin/Release/netcoreapp2.1/publish
