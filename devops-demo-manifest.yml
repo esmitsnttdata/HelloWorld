@@ -1,8 +1,9 @@
 ---
 applications:
-- name: helloworld
+- name: helloworlddemo-nttd-pcf-es
   buildpack: dotnet_core_buildpack
   memory: 128M
-  host: helloworlddemo
+  routes:
+   - route: helloworlddemo-nttd-pcf-es.cfapps.io
   stack: cflinuxfs2
   
