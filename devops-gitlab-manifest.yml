@@ -1,9 +1,9 @@
 ---
 applications:
 - name: helloworld-gl
-  buildpacks:
-   - dotnet_core_buildpack
+  buildpack: dotnet_core_buildpack
   memory: 128M
-  host: helloworld-gl
+  routes:
+   - route: helloworld-gl.cfapps.io
   stack: cflinuxfs2  
   
