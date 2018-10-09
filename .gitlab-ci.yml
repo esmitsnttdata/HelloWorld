@@ -16,7 +16,7 @@ build_job:
     - 'dotnet restore'
     - 'dotnet build -c Release'
     - 'dotnet publish -c Release'
-    - 'sonar-scanner -Dproject.settings=bin/Release/netcoreapp2.1/publish/sonar-project.properties -Dsonar.login=$SQ_LOGIN -Dsonar.host.url=$SQ_URL -Dsonar.analysis.mode=publish -Dsonar.gitlab.commit_sha=%CI_COMMIT_SHA% -Dsonar.gitlab.ref_name=%CI_COMMIT_REF_NAME%'
+    - 'sonar-scanner -Dproject.settings=bin/Release/netcoreapp2.1/publish/sonar-project.properties -Dsonar.login=$SQ_LOGIN -Dsonar.host.url=$SQ_URL -Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=%CI_COMMIT_SHA% -Dsonar.gitlab.ref_name=%CI_COMMIT_REF_NAME%'
 
 # test_job:
 #   stage: test
