@@ -2,6 +2,7 @@ image: microsoft/dotnet:latest
 
 stages:
   - build
+  - analyze
   # - test
   - deploy
 
@@ -16,8 +17,7 @@ build_job:
     - 'dotnet restore'
     - 'dotnet build -c Release'
     - 'dotnet publish -c Release'
-    - 'sonar-scanner -Dproject.settings=bin/Release/netcoreapp2.1/publish/sonar-project.properties -Dsonar.login=$SQ_LOGIN -Dsonar.host.url=$SQ_URL -Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=%CI_COMMIT_SHA% -Dsonar.gitlab.ref_name=%CI_COMMIT_REF_NAME%'
-
+    
 # test_job:
 #   stage: test
 #   script:
@@ -26,6 +26,13 @@ build_job:
 #     - 'dotnet test tests/FunctionalTests'
 #   dependencies:
 #     - build_job
+
+analyze_job:
+  tags:
+    - dotnet
+  stage: analyze
+  script:
+   - 'sonar-scanner -Dproject.settings=bin/Release/netcoreapp2.1/publish/sonar-project.properties -Dsonar.login=$SQ_LOGIN -Dsonar.host.url=$SQ_URL -Dsonar.analysis.mode=preview -Dsonar.gitlab.commit_sha=%CI_COMMIT_SHA% -Dsonar.gitlab.ref_name=%CI_COMMIT_REF_NAME%'
 
 deploy_job:
   tags: 
