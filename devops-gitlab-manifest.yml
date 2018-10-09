@@ -1,9 +1,9 @@
 ---
 applications:
-- name: helloworld-gl
+- name: helloworldgl-nttd-pcf-es
   buildpack: dotnet_core_buildpack
   memory: 128M
   routes:
-   - route: helloworld-gl.cfapps.io
+   - route: helloworldgl-nttd-pcf-es.cfapps.io
   stack: cflinuxfs2  
   
